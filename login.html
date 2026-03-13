@@ -8,8 +8,8 @@
 
 <h2>Control Room Login</h2>
 
-<input type="text" id="user" placeholder="admin"><br><br>
-<input type="password" id="pass" placeholder="pass"><br><br>
+<input type="text" id="user" placeholder="Username"><br><br>
+<input type="password" id="pass" placeholder="Password"><br><br>
 
 <button onclick="login()">Login</button>
 
@@ -19,7 +19,7 @@ function login(){
 var u=document.getElementById("user").value;
 var p=document.getElementById("pass").value;
 
-if(u=="admin" && p=="pass"){
+if(u=="control" && p=="1234"){
 location.href="index.html";
 }else{
 alert("Invalid Login");
