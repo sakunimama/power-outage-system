@@ -8,16 +8,31 @@
 body{
 font-family:Arial;
 text-align:center;
+background:#f4f6f9;
+}
+
+h2{
+margin-top:30px;
 }
 
 table{
 margin:auto;
 border-collapse:collapse;
+margin-top:30px;
 }
 
 td,th{
 border:1px solid black;
 padding:12px;
+font-size:16px;
+}
+
+button{
+margin:3px;
+padding:6px 10px;
+cursor:pointer;
+border:none;
+border-radius:4px;
 }
 
 .active{
@@ -34,7 +49,8 @@ color:white;
 background-color:orange;
 color:white;
 }
-  .partial{
+
+.partial{
 background-color:purple;
 color:white;
 }
@@ -45,7 +61,7 @@ color:white;
 
 <body>
 
-<h2>Live Feeder Status Board</h2>
+<h2>⚡ Live Feeder Status Board</h2>
 
 <table id="statusTable">
 
@@ -59,9 +75,12 @@ color:white;
 <td>Feeder 1</td>
 <td class="active">Active</td>
 <td>
+
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
+<button onclick="setPartial(this)">Partially Restored</button>
 <button onclick="setActive(this)">Restore</button>
+
 </td>
 </tr>
 
@@ -69,9 +88,12 @@ color:white;
 <td>Feeder 2</td>
 <td class="active">Active</td>
 <td>
+
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
+<button onclick="setPartial(this)">Partially Restored</button>
 <button onclick="setActive(this)">Restore</button>
+
 </td>
 </tr>
 
@@ -79,9 +101,12 @@ color:white;
 <td>Feeder 3</td>
 <td class="active">Active</td>
 <td>
+
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
+<button onclick="setPartial(this)">Partially Restored</button>
 <button onclick="setActive(this)">Restore</button>
+
 </td>
 </tr>
 
@@ -99,6 +124,12 @@ function setRepair(btn){
 var cell=btn.parentElement.previousElementSibling;
 cell.innerText="Under Repair";
 cell.className="repair";
+}
+
+function setPartial(btn){
+var cell=btn.parentElement.previousElementSibling;
+cell.innerText="Partially Restored";
+cell.className="partial";
 }
 
 function setActive(btn){
