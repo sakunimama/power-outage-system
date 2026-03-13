@@ -1,20 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Power Outage</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+text-align:center;
+}
+
+h2{
+margin-top:30px;
+}
+
+form{
+margin-top:30px;
+}
+
+select,button{
+padding:8px;
+margin:10px;
+font-size:14px;
+}
+
+button{
+background:#e74c3c;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>⚡ Report Power Outage</h2>
+
+<form>
+
+<label>Select Feeder</label><br>
+
+<select id="feeder">
+
+<option>Feeder 1</option>
+<option>Feeder 2</option>
+<option>Feeder 3</option>
+
+</select>
+
+<br>
+
+<label>Fault Type</label><br>
+
+<select id="fault">
+
+<option>Line Fault</option>
+<option>Transformer Fault</option>
+<option>Insulator Burst</option>
+<option>Tree Touching Line</option>
+<option>Cable Fault</option>
+
+</select>
+
+<br>
+
+<button type="button" onclick="submitFault()">Submit Fault</button>
+
+</form>
+
 <script>
+
 function submitFault(){
 
 var feeder=document.getElementById("feeder").value;
 var fault=document.getElementById("fault").value;
+
 var time=new Date().toLocaleString();
 
-var outage={
+var log={
 feeder:feeder,
-fault:fault,
-time:time,
-status:"Pending"
+status:"Fault - "+fault,
+time:time
 };
 
 var logs=JSON.parse(localStorage.getItem("outageLogs"))||[];
 
-logs.push(outage);
+logs.push(log);
 
 localStorage.setItem("outageLogs",JSON.stringify(logs));
 
@@ -23,4 +99,8 @@ alert("Fault reported successfully");
 location.href="dashboard.html";
 
 }
+
 </script>
+
+</body>
+</html>
