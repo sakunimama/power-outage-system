@@ -13,19 +13,21 @@
 
 <button onclick="login()">Login</button>
 
-<script>
+  <script>
+
 function login(){
 
-var u=document.getElementById("user").value;
-var p=document.getElementById("pass").value;
+var u=document.getElementById("user").value.trim();
+var p=document.getElementById("pass").value.trim();
 
-if(u=="control" && p=="1234"){
-location.href="index.html";
+if(u==="admin" && p==="admin123"){
+window.location.href="dashboard.html";
 }else{
-alert("Invalid Login");
+alert("Wrong Username or Password");
 }
 
 }
+
 </script>
 
 </body>
