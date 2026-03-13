@@ -151,6 +151,92 @@ var cell=btn.parentElement.previousElementSibling;
 cell.innerText="Active";
 cell.className="active";
 }
+  <script>
+
+function saveLog(feeder,status){
+
+var time=new Date().toLocaleString();
+
+var log={
+feeder:feeder,
+status:status,
+time:time
+};
+
+var logs=JSON.parse(localStorage.getItem("outageLogs"))||[];
+
+logs.push(log);
+
+localStorage.setItem("outageLogs",JSON.stringify(logs));
+
+}
+
+function setFault(btn){
+
+var row=btn.parentElement.parentElement;
+var feeder=row.cells[0].innerText;
+var cell=row.cells[1];
+
+cell.innerText="Fault";
+cell.className="fault";
+
+saveLog(feeder,"Fault");
+
+}
+
+function setRepair(btn){
+
+var row=btn.parentElement.parentElement;
+var feeder=row.cells[0].innerText;
+var cell=row.cells[1];
+
+cell.innerText="Under Repair";
+cell.className="repair";
+
+saveLog(feeder,"Under Repair");
+
+}
+
+function setPartial(btn){
+
+var row=btn.parentElement.parentElement;
+var feeder=row.cells[0].innerText;
+var cell=row.cells[1];
+
+cell.innerText="Partially Restored";
+cell.className="partial";
+
+saveLog(feeder,"Partially Restored");
+
+}
+
+function setShutdown(btn){
+
+var row=btn.parentElement.parentElement;
+var feeder=row.cells[0].innerText;
+var cell=row.cells[1];
+
+cell.innerText="Shutdown";
+cell.className="shutdown";
+
+saveLog(feeder,"Shutdown");
+
+}
+
+function setActive(btn){
+
+var row=btn.parentElement.parentElement;
+var feeder=row.cells[0].innerText;
+var cell=row.cells[1];
+
+cell.innerText="Active";
+cell.className="active";
+
+saveLog(feeder,"Restored");
+
+}
+
+</script>
 
 </script>
 
