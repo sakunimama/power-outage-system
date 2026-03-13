@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Power Outage</title>
+</head>
+
+<body>
+
+<h2>Report Power Outage</h2>
+
+<label>Select Feeder</label><br>
+<select id="feeder">
+<option>Feeder 1</option>
+<option>Feeder 2</option>
+<option>Feeder 3</option>
+</select>
+
+<br><br>
+
+<label>Fault Type</label><br>
+<select id="fault">
+<option>11kV Line Fault</option>
+<option>Transformer Fault</option>
+<option>Tree Touching Line</option>
+<option>Insulator Burst</option>
+</select>
+
+<br><br>
+
+<button onclick="submitFault()">Submit Fault</button>
+
+<script>
+function submitFault(){
+var feeder=document.getElementById("feeder").value;
+var fault=document.getElementById("fault").value;
+
+alert("Fault Reported\nFeeder: "+feeder+"\nFault: "+fault);
+}
+</script>
+
+</body>
+</html>
