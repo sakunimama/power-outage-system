@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Outage Log</title>
+</head>
+
+<body>
+
+<h2>Power Outage Log</h2>
+
+<table border="1" id="logTable">
+<tr>
+<th>Time</th>
+<th>Feeder</th>
+<th>Fault</th>
+<th>Status</th>
+</tr>
+</table>
+
+<script>
+
+var logs=JSON.parse(localStorage.getItem("outageLogs"))||[];
+
+var table=document.getElementById("logTable");
+
+logs.forEach(function(log){
+
+var row=table.insertRow();
+
+row.insertCell(0).innerText=log.time;
+row.insertCell(1).innerText=log.feeder;
+row.insertCell(2).innerText=log.fault;
+row.insertCell(3).innerText=log.status;
+
+});
+
+</script>
+
+</body>
+</html>
