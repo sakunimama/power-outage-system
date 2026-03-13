@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feeder Status Board</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid black;
+padding:12px;
+}
+
+.active{
+background-color:#4CAF50;
+color:white;
+}
+
+.fault{
+background-color:red;
+color:white;
+}
+
+.repair{
+background-color:orange;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Live Feeder Status Board</h2>
+
+<table id="statusTable">
+
+<tr>
+<th>Feeder</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Feeder 1</td>
+<td class="active">Active</td>
+<td>
+<button onclick="setFault(this)">Fault</button>
+<button onclick="setRepair(this)">Repair</button>
+<button onclick="setActive(this)">Restore</button>
+</td>
+</tr>
+
+<tr>
+<td>Feeder 2</td>
+<td class="active">Active</td>
+<td>
+<button onclick="setFault(this)">Fault</button>
+<button onclick="setRepair(this)">Repair</button>
+<button onclick="setActive(this)">Restore</button>
+</td>
+</tr>
+
+<tr>
+<td>Feeder 3</td>
+<td class="active">Active</td>
+<td>
+<button onclick="setFault(this)">Fault</button>
+<button onclick="setRepair(this)">Repair</button>
+<button onclick="setActive(this)">Restore</button>
+</td>
+</tr>
+
+</table>
+
+<script>
+
+function setFault(btn){
+var cell=btn.parentElement.previousElementSibling;
+cell.innerText="Fault";
+cell.className="fault";
+}
+
+function setRepair(btn){
+var cell=btn.parentElement.previousElementSibling;
+cell.innerText="Under Repair";
+cell.className="repair";
+}
+
+function setActive(btn){
+var cell=btn.parentElement.previousElementSibling;
+cell.innerText="Active";
+cell.className="active";
+}
+
+</script>
+
+</body>
+</html>
