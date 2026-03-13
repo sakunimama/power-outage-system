@@ -55,6 +55,11 @@ background-color:purple;
 color:white;
 }
 
+.shutdown{
+background-color:#3498db;
+color:white;
+}
+
 </style>
 
 </head>
@@ -63,7 +68,7 @@ color:white;
 
 <h2>⚡ Live Feeder Status Board</h2>
 
-<table id="statusTable">
+<table>
 
 <tr>
 <th>Feeder</th>
@@ -79,6 +84,7 @@ color:white;
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
 <button onclick="setPartial(this)">Partially Restored</button>
+<button onclick="setShutdown(this)">Shutdown</button>
 <button onclick="setActive(this)">Restore</button>
 
 </td>
@@ -92,6 +98,7 @@ color:white;
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
 <button onclick="setPartial(this)">Partially Restored</button>
+<button onclick="setShutdown(this)">Shutdown</button>
 <button onclick="setActive(this)">Restore</button>
 
 </td>
@@ -105,6 +112,7 @@ color:white;
 <button onclick="setFault(this)">Fault</button>
 <button onclick="setRepair(this)">Repair</button>
 <button onclick="setPartial(this)">Partially Restored</button>
+<button onclick="setShutdown(this)">Shutdown</button>
 <button onclick="setActive(this)">Restore</button>
 
 </td>
@@ -130,6 +138,12 @@ function setPartial(btn){
 var cell=btn.parentElement.previousElementSibling;
 cell.innerText="Partially Restored";
 cell.className="partial";
+}
+
+function setShutdown(btn){
+var cell=btn.parentElement.previousElementSibling;
+cell.innerText="Shutdown";
+cell.className="shutdown";
 }
 
 function setActive(btn){
