@@ -122,37 +122,6 @@ color:white;
 
 <script>
 
-function setFault(btn){
-var cell=btn.parentElement.previousElementSibling;
-cell.innerText="Fault";
-cell.className="fault";
-}
-
-function setRepair(btn){
-var cell=btn.parentElement.previousElementSibling;
-cell.innerText="Under Repair";
-cell.className="repair";
-}
-
-function setPartial(btn){
-var cell=btn.parentElement.previousElementSibling;
-cell.innerText="Partially Restored";
-cell.className="partial";
-}
-
-function setShutdown(btn){
-var cell=btn.parentElement.previousElementSibling;
-cell.innerText="Shutdown";
-cell.className="shutdown";
-}
-
-function setActive(btn){
-var cell=btn.parentElement.previousElementSibling;
-cell.innerText="Active";
-cell.className="active";
-}
-  <script>
-
 function saveLog(feeder,status){
 
 var time=new Date().toLocaleString();
@@ -235,8 +204,6 @@ cell.className="active";
 saveLog(feeder,"Restored");
 
 }
-
-</script>
 
 </script>
 
